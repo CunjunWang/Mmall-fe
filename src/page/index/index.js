@@ -1,2 +1,9 @@
-require('./index.css');
-console.log("hello index");
+let _mm = require('util/mm.js');
+
+require('page/common/nav/index.js');
+require('page/common/header/index.js');
+let navSide = require('page/common/nav-side/index.js');
+
+navSide.init({
+    name: 'user-center'
+});
