@@ -11,7 +11,7 @@ let nav = {
         return this;
     },
     bindEvent: function () {
-        $('.js-user-login').click(function () {
+        $('.js-login').click(function () {
             _mm.doLogin();
         });
         $('.js-register').click(function () {
@@ -27,7 +27,7 @@ let nav = {
     },
     loadUserInfo: function () {
         _user.checkLogin(function (res) {
-            $('.user.not-user-login').hide().siblings('.user.user-login').show()
+            $('.user.not-login').hide().siblings('.user.login').show()
                 .find('.username').text(res.username);
         }, function (errMsg) {
             // do nothing

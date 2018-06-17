@@ -18,12 +18,12 @@ let navSide = {
             },
             {
                 name: 'user-pass-update',
-                desc: 'pass update',
+                desc: 'password update',
                 href: './user-pass-update.html'
             },
             {
                 name: 'about',
-                desc: 'About Mmall',
+                desc: 'About MMall',
                 href: './about.html'
             }
         ]
