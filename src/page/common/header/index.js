@@ -9,7 +9,7 @@ let header = {
         this.bindEvent();
     },
     onLoad: function () {
-        let keyword = _mm.getServerUrl('');
+        let keyword = _mm.getUrlParam('keyword');
         if (keyword) {
             $('#search-input').val(keyword);
         }
