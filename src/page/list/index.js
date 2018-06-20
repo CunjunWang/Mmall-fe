@@ -3,7 +3,7 @@
 require('./index.css');
 require('page/common/nav/index.js');
 require('page/common/header/index.js');
-let _mm = require('util/mm.js');
+let _nim = require('util/nim.js');
 let _product = require('service/product-service.js');
 let templateIndex = require('./index.string');
 let Pagination = require('util/pagination/index.js');
@@ -11,11 +11,11 @@ let Pagination = require('util/pagination/index.js');
 let page = {
     data: {
         listParam: {
-            keyword: _mm.getUrlParam("keyword") || '',
-            categoryId: _mm.getUrlParam("categoryId") || '',
-            orderBy: _mm.getUrlParam("orderBy") || 'default',
-            pageNum: _mm.getUrlParam("pageNum") || 1,
-            pageSize: _mm.getUrlParam("pageSize") || 20
+            keyword: _nim.getUrlParam("keyword") || '',
+            categoryId: _nim.getUrlParam("categoryId") || '',
+            orderBy: _nim.getUrlParam("orderBy") || 'default',
+            pageNum: _nim.getUrlParam("pageNum") || 1,
+            pageSize: _nim.getUrlParam("pageSize") || 20
         }
     },
     init: function () {
@@ -66,7 +66,7 @@ let page = {
         listParam.categoryId ? (delete listParam.keyword) : (delete listParam.categoryId);
 
         _product.getProductList(listParam, function (res) {
-                listHtml = _mm.renderHtml(templateIndex, {
+                listHtml = _nim.renderHtml(templateIndex, {
                     list: res.list
                 });
                 $pListCon.html(listHtml);
@@ -80,7 +80,7 @@ let page = {
                 });
             },
             function (errMsg) {
-                _mm.errorTips(errMsg);
+                _nim.errorTips(errMsg);
             }
         )
     },

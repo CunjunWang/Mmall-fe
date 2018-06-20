@@ -1,5 +1,5 @@
 require('./index.css');
-let _mm = require('util/mm.js');
+let _nim = require('util/nim.js');
 let templateIndex = require('./index.string');
 
 let navSide = {
@@ -38,7 +38,7 @@ let navSide = {
                 this.option.navList[i].isActive = true;
             }
         }
-        let navHtml = _mm.renderHtml(templateIndex, {
+        let navHtml = _nim.renderHtml(templateIndex, {
             navList: this.option.navList
         });
         $('.nav-side').html(navHtml);

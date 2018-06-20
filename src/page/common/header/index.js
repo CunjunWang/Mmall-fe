@@ -1,7 +1,7 @@
 // Created by CunjunWang on 2018/6/14
 
 require('./index.css');
-let _mm = require('util/mm.js');
+let _nim = require('util/nim.js');
 
 let header = {
     init: function () {
@@ -9,7 +9,7 @@ let header = {
         this.bindEvent();
     },
     onLoad: function () {
-        let keyword = _mm.getUrlParam('keyword');
+        let keyword = _nim.getUrlParam('keyword');
         if (keyword) {
             $('#search-input').val(keyword);
         }
@@ -30,7 +30,7 @@ let header = {
         if (keyword) {
             window.location.href = `./list.html?keyword=${keyword}`;
         } else {
-            _mm.goHome();
+            _nim.goHome();
         }
     }
 };

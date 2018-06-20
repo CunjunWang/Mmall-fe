@@ -4,7 +4,7 @@ let Hogan = require('hogan.js');
 let conf = {
     serverHost: ''
 };
-let _mm = {
+let _nim = {
     request: function (param) {
         let _this = this;
         $.ajax({
@@ -66,4 +66,4 @@ let _mm = {
     }
 };
 
-module.exports = _mm;
+module.exports = _nim;

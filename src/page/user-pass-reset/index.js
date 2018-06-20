@@ -2,7 +2,7 @@
 
 require('./index.css');
 require('page/common/nav-simple/index.js');
-let _mm = require('util/mm.js');
+let _nim = require('util/nim.js');
 let _user = require('service/user-service.js');
 
 let formError = {

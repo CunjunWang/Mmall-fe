@@ -3,7 +3,7 @@ require('./index.css');
 require('page/common/nav/index.js');
 require('page/common/header/index.js');
 let navSide = require('page/common/nav-side/index.js');
-let _mm = require('util/mm.js');
+let _nim = require('util/nim.js');
 let _user = require('service/user-service.js');
 
 
@@ -34,14 +34,14 @@ let page = {
                     passwordOld: userInfo.password,
                     passwordNew: userInfo.passwordNew
                 }, function (res, msg) {
-                    _mm.successTips("Password Updated!");
+                    _nim.successTips("Password Updated!");
                     _user.logout();
                     window.location.href = './user-login.html'
                 }, function (errMsg) {
-                    _mm.errorTips(errMsg);
+                    _nim.errorTips(errMsg);
                 });
             } else {
-                _mm.errorTips(validateResult.msg);
+                _nim.errorTips(validateResult.msg);
             }
         });
     },
@@ -52,7 +52,7 @@ let page = {
             msg: ''
         };
 
-        if (!_mm.validate(formData.password, 'require')) {
+        if (!_nim.validate(formData.password, 'require')) {
             result.msg = "Invalid password!";
             return result;
         }

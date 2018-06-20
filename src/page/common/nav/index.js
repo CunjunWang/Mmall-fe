@@ -1,5 +1,5 @@
 require('./index.css');
-let _mm = require('util/mm.js');
+let _nim = require('util/nim.js');
 let _user = require('service/user-service.js');
 let _cart = require('service/cart-service.js');
 
@@ -12,7 +12,7 @@ let nav = {
     },
     bindEvent: function () {
         $('.js-login').click(function () {
-            _mm.doLogin();
+            _nim.doLogin();
         });
         $('.js-register').click(function () {
             window.location.href = './user-register.html';
@@ -21,7 +21,7 @@ let nav = {
             _user.logout(function (res) {
                 window.location.reload();
             }, function (errMsg) {
-                _mm.errorTips(errMsg);
+                _nim.errorTips(errMsg);
             });
         });
     },

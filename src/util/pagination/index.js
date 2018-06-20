@@ -2,7 +2,7 @@
 
 require('./index.css');
 let templatePagination = require('./index.string');
-let _mm = require('util/mm.js');
+let _nim = require('util/nim.js');
 
 let Pagination = function () {
     let _this = this;
@@ -65,7 +65,7 @@ Pagination.prototype.getPaginationHtml = function () {
         disabled: !this.option.hasNextPage
     });
 
-    html = _mm.renderHtml(templatePagination, {
+    html = _nim.renderHtml(templatePagination, {
         pageArray: pageArray,
         pageNum: option.pageNum,
         pages: option.pages

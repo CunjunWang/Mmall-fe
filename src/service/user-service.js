@@ -1,11 +1,11 @@
 // Created by CunjunWang on 2018/6/14
 
-let _mm = require('util/mm.js');
+let _nim = require('util/nim.js');
 
 let _user = {
     login: function (userInfo, resolve, reject) {
-        _mm.request({
-            url: _mm.getServerUrl('/user/login.do'),
+        _nim.request({
+            url: _nim.getServerUrl('/user/login.do'),
             data: userInfo,
             method: 'POST',
             success: resolve,
@@ -13,16 +13,16 @@ let _user = {
         });
     },
     checkLogin: function (resolve, reject) {
-        _mm.request({
-            url: _mm.getServerUrl('/user/get_user_info.do'),
+        _nim.request({
+            url: _nim.getServerUrl('/user/get_user_info.do'),
             method: 'POST',
             success: resolve,
             error: reject
         });
     },
     checkUsername: function (username, resolve, reject) {
-        _mm.request({
-            url: _mm.getServerUrl('/user/check_valid.do'),
+        _nim.request({
+            url: _nim.getServerUrl('/user/check_valid.do'),
             data: {
                 type: 'username',
                 str: username
@@ -33,8 +33,8 @@ let _user = {
         });
     },
     register: function (userInfo, resolve, reject) {
-        _mm.request({
-            url: _mm.getServerUrl('/user/register.do'),
+        _nim.request({
+            url: _nim.getServerUrl('/user/register.do'),
             data: userInfo,
             method: 'POST',
             success: resolve,
@@ -42,8 +42,8 @@ let _user = {
         });
     },
     getQuestion: function (username, resolve, reject) {
-        _mm.request({
-            url: _mm.getServerUrl('/user/forget_get_question.do'),
+        _nim.request({
+            url: _nim.getServerUrl('/user/forget_get_question.do'),
             data: {
                 username
             },
@@ -53,8 +53,8 @@ let _user = {
         });
     },
     checkAnswer: function (userInfo, resolve, reject) {
-        _mm.request({
-            url: _mm.getServerUrl('/user/forget_check_answer.do'),
+        _nim.request({
+            url: _nim.getServerUrl('/user/forget_check_answer.do'),
             data: userInfo,
             method: 'POST',
             success: resolve,
@@ -62,8 +62,8 @@ let _user = {
         });
     },
     resetPassword: function (userInfo, resolve, reject) {
-        _mm.request({
-            url: _mm.getServerUrl('/user/forget_reset_password.do'),
+        _nim.request({
+            url: _nim.getServerUrl('/user/forget_reset_password.do'),
             data: userInfo,
             method: 'POST',
             success: resolve,
@@ -71,16 +71,16 @@ let _user = {
         });
     },
     getUserInfo: function (resolve, reject) {
-        _mm.request({
-            url: _mm.getServerUrl('/user/get_information.do'),
+        _nim.request({
+            url: _nim.getServerUrl('/user/get_information.do'),
             method: 'POST',
             success: resolve,
             error: reject
         });
     },
     updateUserInfo: function (userInfo, resolve, reject) {
-        _mm.request({
-            url: _mm.getServerUrl('/user/update_information.do'),
+        _nim.request({
+            url: _nim.getServerUrl('/user/update_information.do'),
             data: userInfo,
             method: 'POST',
             success: resolve,
@@ -88,8 +88,8 @@ let _user = {
         });
     },
     updatePassword: function (userInfo, resolve, reject) {
-        _mm.request({
-            url: _mm.getServerUrl('/user/reset_password.do'),
+        _nim.request({
+            url: _nim.getServerUrl('/user/reset_password.do'),
             data: userInfo,
             method: 'POST',
             success: resolve,
@@ -97,8 +97,8 @@ let _user = {
         });
     },
     logout: function (resolve, reject) {
-        _mm.request({
-            url: _mm.getServerUrl('/user/logout.do'),
+        _nim.request({
+            url: _nim.getServerUrl('/user/logout.do'),
             method: 'POST',
             success: resolve,
             error: reject

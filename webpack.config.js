@@ -1,5 +1,4 @@
 let webpack = require('webpack');
-let ExtractTextPlugin = require('extract-text-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
@@ -25,9 +24,9 @@ let config = {
             'list': './src/page/list/index.js',
             'detail': './src/page/detail/index.js',
             'cart': './src/page/cart/index.js',
-            // 'order-confirm': './src/page/order-confirm/index.js',
-            // 'order-list': './src/page/order-list/index.js',
-            // 'order-detail': './src/page/order-detail/index.js',
+            'order-confirm': './src/page/order-confirm/index.js',
+            'order-list': './src/page/order-list/index.js',
+            'order-detail': './src/page/order-detail/index.js',
             // 'payment': './src/page/payment/index.js',
             'user-login': './src/page/user-login/index.js',
             'user-register': './src/page/user-register/index.js',
@@ -125,9 +124,9 @@ let config = {
             new HtmlWebpackPlugin(getHtmlConfig('list', 'Item List')),
             new HtmlWebpackPlugin(getHtmlConfig('detail', 'Detail')),
             new HtmlWebpackPlugin(getHtmlConfig('cart', 'Cart')),
-            // new HtmlWebpackPlugin(getHtmlConfig('order-confirm', '订单确认')),
-            // new HtmlWebpackPlugin(getHtmlConfig('order-list', '订单列表')),
-            // new HtmlWebpackPlugin(getHtmlConfig('order-detail', '订单详情')),
+            new HtmlWebpackPlugin(getHtmlConfig('order-confirm', 'Order Confirm')),
+            new HtmlWebpackPlugin(getHtmlConfig('order-list', 'Order List')),
+            new HtmlWebpackPlugin(getHtmlConfig('order-detail', 'Order Detail')),
             // new HtmlWebpackPlugin(getHtmlConfig('payment', '订单支付')),
             new HtmlWebpackPlugin(getHtmlConfig('user-login', 'Login')),
             new HtmlWebpackPlugin(getHtmlConfig('user-register', 'Register')),

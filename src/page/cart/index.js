@@ -6,7 +6,7 @@ require('./index.css');
 require('page/common/header/index.js');
 
 let nav = require('page/common/nav/index.js');
-let _mm = require('util/mm.js');
+let _nim = require('util/nim.js');
 let _cart = require('service/cart-service.js');
 let templateIndex = require('./index.string');
 
@@ -75,7 +75,7 @@ let page = {
 
             if (type === 'plus') {
                 if (currentCount >= maxCount) {
-                    _mm.errorTips('Not enough stock');
+                    _nim.errorTips('Not enough stock');
                     return;
                 }
                 newCount = currentCount + 1;
@@ -115,16 +115,16 @@ let page = {
                 if(arrProductIds.length){
                     _this.deleteCartProduct(arrProductIds.join(','));
                 } else {
-                    _mm.errorTips("Select the items you want to delete.");
+                    _nim.errorTips("Select the items you want to delete.");
                 }
             }
         });
 
         $(document).on('click', '.btn-submit', function () {
             if(_this.data.cartInfo && _this.data.cartInfo.cartTotalPrice > 0 ) {
-                window.location.href = './confirm.html';
+                window.location.href = './order-confirm.html';
             } else {
-                _mm.errorTips("Please select items before checkout.")
+                _nim.errorTips("Please select items before checkout.")
             }
         });
     },
@@ -141,7 +141,7 @@ let page = {
         this.filter(data);
         this.data.cartInfo = data;
 
-        let cartHtml = _mm.renderHtml(templateIndex, data);
+        let cartHtml = _nim.renderHtml(templateIndex, data);
         $('.page-wrap').html(cartHtml);
 
         nav.loadCartCount();

@@ -2,7 +2,7 @@
 
 require('./index.css');
 require('page/common/nav-simple/index.js');
-let _mm = require('util/mm.js');
+let _nim = require('util/nim.js');
 let _user = require('service/user-service.js');
 
 let formError = {
@@ -74,11 +74,11 @@ let page = {
             msg: ''
         };
 
-        if (!_mm.validate(formData.username, 'require')) {
+        if (!_nim.validate(formData.username, 'require')) {
             result.msg = "Username can not be empty!";
             return result;
         }
-        if (!_mm.validate(formData.password, 'require')) {
+        if (!_nim.validate(formData.password, 'require')) {
             result.msg = "Password can not be empty!";
             return result;
         }
@@ -90,19 +90,19 @@ let page = {
             result.msg = "Password does not match!";
             return result;
         }
-        if (!_mm.validate(formData.phone, 'phone')) {
+        if (!_nim.validate(formData.phone, 'phone')) {
             result.msg = "Invalid phone format!";
             return result;
         }
-        if (!_mm.validate(formData.email, 'email')) {
+        if (!_nim.validate(formData.email, 'email')) {
             result.msg = "Invalid email format";
             return result;
         }
-        if (!_mm.validate(formData.question, 'require')) {
+        if (!_nim.validate(formData.question, 'require')) {
             result.msg = "Security question cannot be empty!";
             return result;
         }
-        if (!_mm.validate(formData.answer, 'require')) {
+        if (!_nim.validate(formData.answer, 'require')) {
             result.msg = "Security answer cannot be empty!";
             return result;
         }

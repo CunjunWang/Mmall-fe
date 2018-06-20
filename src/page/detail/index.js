@@ -4,14 +4,14 @@ require('./index.css');
 require('page/common/nav/index.js');
 require('page/common/header/index.js');
 
-let _mm = require('util/mm.js');
+let _nim = require('util/nim.js');
 let _product = require('service/product-service.js');
 let _cart = require('service/cart-service.js');
 let templateIndex = require('./index.string');
 
 let page = {
     data: {
-        productId: _mm.getUrlParam('productId') || ''
+        productId: _nim.getUrlParam('productId') || ''
     },
     init: function () {
         this.onLoad();
@@ -19,7 +19,7 @@ let page = {
     },
     onLoad: function () {
         if (!this.data.productId) {
-            _mm.goHome();
+            _nim.goHome();
         }
         this.loadDetail();
     },
@@ -53,7 +53,7 @@ let page = {
             }, function (res) {
                 window.location.href = './result.html?type=cart-add';
             }, function (errMsg) {
-                _mm.errorTips(errMsg);
+                _nim.errorTips(errMsg);
             });
         });
     },
@@ -69,7 +69,7 @@ let page = {
             // cache detail data
             _this.data.detailInfo = res;
 
-            html = _mm.renderHtml(templateIndex, res);
+            html = _nim.renderHtml(templateIndex, res);
             $pageWrap.html(html);
         }, function (errMsg) {
             $pageWrap.html('<p class="err-tip">Can not find this product.</p>');

@@ -2,7 +2,7 @@
 C2C Online Shopping Website
 
 ## Tech Stack:
-- Webpack + Babel
+- Webpack + CommonJS
 - Hogan/EJS template
 - jQuery
 

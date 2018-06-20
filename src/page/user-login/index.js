@@ -1,6 +1,6 @@
 require('./index.css');
 require('page/common/nav-simple/index.js');
-let _mm = require('util/mm.js');
+let _nim = require('util/nim.js');
 let _user = require('service/user-service.js');
 
 let formError = {
@@ -36,7 +36,7 @@ let page = {
 
         if (validateResult.status) {
             _user.login(formData, function (res) {
-                window.location.href = _mm.getUrlParam('redirect') || './index.html';
+                window.location.href = _nim.getUrlParam('redirect') || './index.html';
             }, function (err) {
                 formError.show(err);
             });
@@ -50,10 +50,10 @@ let page = {
             msg: ''
         };
 
-        if (!_mm.validate(formData.username, 'require')) {
+        if (!_nim.validate(formData.username, 'require')) {
             result.msg = "Username can not be empty!";
             return result;
-        } else if (!_mm.validate(formData.password, 'require')) {
+        } else if (!_nim.validate(formData.password, 'require')) {
             result.msg = "Password can not be empty!";
             return result;
         }
