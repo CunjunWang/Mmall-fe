@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%= require('html-loader!./layout/head-common.html') %>
+    <title><%= htmlWebpackPlugin.options.title %> | NiMall</title>
+</head>
+<body>
+<%= require('html-loader!./layout/nav-simple.html') %>
+
+<div class="page-wrap w">
+    <div class="result-con register-success">
+        <h1 class="result-title">Congratulation, register successful!</h1>
+        <div class="result-content">
+            <a href="./index.html" class="link">
+                Home
+            </a>
+            <a href="./user-login.html" class="link">
+                Login Now
+            </a>
+        </div>
+    </div>
+    <div class="result-con default-success">
+        <h1 class="result-title">Congratulation, operation successful!</h1>
+        <div class="result-content">
+            <a href="./index.html" class="link">
+                Home
+            </a>
+        </div>
+    </div>
+    <div class="result-con pass-reset-success">
+        <h1 class="result-title">Congratulation, password reset successful!</h1>
+        <div class="result-content">
+            <a href="./index.html" class="link">
+                Home
+            </a>
+            <a href="./user-login.html" class="link">
+                Login Now
+            </a>
+        </div>
+    </div>
+    <div class="result-con cart-add-success">
+        <h1 class="result-title">Congratulation, add your product to cart successful!</h1>
+        <div class="result-content">
+            <a href="./index.html" class="link">
+                Continue Shopping
+            </a>
+            <a href="./cart.html" class="link">
+                Go to Cart
+            </a>
+        </div>
+    </div>
+    <div class="result-con payment-success">
+        <h1 class="result-title">Congratulation, payment successful!</h1>
+        <div class="result-content">
+            <a href="./index.html" class="link">
+                Continue Shopping
+            </a>
+            <a href="./order-detail.html?orderNumber=" class="link order-number">
+                View the order
+            </a>
+        </div>
+    </div>
+</div>
+<%= require('html-loader!./layout/footer.html') %>
+</body>
+</html>
